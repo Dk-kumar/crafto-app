@@ -1,0 +1,67 @@
+@import '../../styles/_media';
+
+.Login_Container {
+  height: 100vh;
+  display: flex;
+  background-color: whitesmoke;
+  @include mobile {
+    display: inline;
+    background-color: none;
+  }
+  
+  .Login_Wrapper {
+    width: 350px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    padding: 1rem 0 2rem;
+
+    .Heading {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .Input_Wrapper {
+      display: flex;
+      padding: 0 1rem;
+      flex-direction: column;
+      gap: 2rem;
+
+      input {
+        height: 14px;
+        border-radius: 4px;
+        border: none;
+        padding: 12px;
+        background-color: whitesmoke;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        height: 38px;
+        border-radius: 4px;
+        border: none;
+        background-color: orangered;
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+
+
+  .Error_Message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  .Input_Error {
+    border: 1px solid red !important;
+  }
+}

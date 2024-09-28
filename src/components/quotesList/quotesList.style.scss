@@ -1,0 +1,93 @@
+@import '../../styles/_media';
+
+.QuotesList_Container {
+  .Header {
+    background: orangered;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+
+    @include mobile {
+        padding: 0 1rem;
+    }
+
+    .Left_header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        a {
+            button {
+                color: white;
+                background: transparent;
+                border: none;
+                font-weight: bold;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            @include mobile {
+                display: none
+            }
+        }
+
+        .LogOut {
+            button {
+                cursor: pointer;
+
+            }
+        }
+    }
+
+  }
+
+  .Create_btn {
+    a {
+        button {
+            padding: 8px;
+            margin: 1rem 0;
+        }
+    }
+    @include after-mobile {
+        display: none
+    }
+  }
+
+  .Lists_Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .List_Card {
+        width: 340px;
+
+        @include mobile {
+            min-width: 100%;
+        }
+        img {
+            min-width: 340px;
+            max-height: 300px;
+            min-height: 300px;
+            object-fit: cover;
+
+            @include mobile {
+                min-width: 100%;
+            }
+        }
+    }
+  }
+
+  .Buttons_Wrapper {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+    justify-content: end;
+
+    button {
+        border: none;
+        padding: 6px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+}
