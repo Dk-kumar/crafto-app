@@ -76,20 +76,30 @@ const QuotesList = ({ setToken }) => {
         </Link>
       </div>
       <div className="Lists_Wrapper">
-        {quotes.map((quote, index) => (
-          <>
-            {
-              <div key={index} className="List_Card">
-                <img src={quote.mediaUrl} alt="quote" />
-                <div className="Quote_Text">{quote.text}</div>
-                <div className="Quote_Date">
-                  {quote.username} -{" "}
-                  {new Date(quote.created_at).toLocaleString()}
+        {quotes.map((quote, index) => {
+          const date = new Date(quote.createdAt);
+
+          
+          const day = date.getDate();
+          const month = date.getMonth() + 1;
+          const year = date.getFullYear();
+
+          const formattedDate = `${day}/${month}/${year}`;
+          return (
+            <>
+              {
+                <div key={index} className="List_Card">
+                  <img src={quote.mediaUrl} alt="quote" />
+                  <div className="Quote_Text">{quote.text}</div>
+                  <div className="Quote_Date">
+                    {quote.username} -{" "}
+                    {formattedDate}
+                  </div>
                 </div>
-              </div>
-            }
-          </>
-        ))}
+              }
+            </>
+          );
+        })}
       </div>
 
       <div className="Buttons_Wrapper">
